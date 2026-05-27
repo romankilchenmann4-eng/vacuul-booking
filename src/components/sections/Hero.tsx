@@ -14,11 +14,11 @@ export default function Hero() {
           Vacuum Palm Cooling Technology
         </p>
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Kühlen. Regenerieren.<br />Leisten.
+          Der schnellste Weg<br />zur Kernkühlung
         </h1>
         <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">
-          Entdecken Sie Vacuum Palm Cooling – die innovative Technologie
-          für schnelle Regeneration und maximale Leistung.
+          600 spezialisierte Blutgefässe in Ihren Handflächen – genutzt
+          mit Unterdruck und präziser Kühlung. Stanford-forschungsbasiert.
         </p>
         <a
           href={CALENDLY_URL}
