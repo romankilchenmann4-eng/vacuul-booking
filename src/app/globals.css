@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Colors */
+  --color-vacuul-blue: #0B2545;
+  --color-vacuul-teal: #13698B;
+  --color-vacuul-light: #5FC5E3;
+  --color-vacuul-accent: #00E5CC;
+  --color-vacuul-accent-hover: #00D4B8;
+  --color-vacuul-bg: #F0F7FA;
+  --color-vacuul-dark: #071829;
+  --color-vacuul-surface: #FFFFFF;
+  --color-vacuul-muted: #8BA5BD;
+
+  /* Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-size-display: 3.5rem;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+
+  /* Shadows */
+  --shadow-card: 0 4px 6px -1px rgb(11 37 69 / 0.1), 0 2px 4px -2px rgb(11 37 69 / 0.1);
+  --shadow-card-hover: 0 20px 25px -5px rgb(11 37 69 / 0.1), 0 8px 10px -6px rgb(11 37 69 / 0.1);
+
+  /* Border radius */
+  --radius-card: 1rem;
+  --radius-button: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-vacuul-bg);
+  color: var(--color-vacuul-blue);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Dark mode overrides */
+.dark body {
+  background: #0A1628;
+  color: #e2e8f0;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0 229 204 / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(0 229 204 / 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.5;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 1.5s ease-in-out infinite;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
 }
