@@ -3,16 +3,16 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  /* Colors */
-  --color-vacuul-blue: #0B2545;
-  --color-vacuul-teal: #13698B;
-  --color-vacuul-light: #5FC5E3;
-  --color-vacuul-accent: #00E5CC;
-  --color-vacuul-accent-hover: #00D4B8;
-  --color-vacuul-bg: #F0F7FA;
-  --color-vacuul-dark: #071829;
+  /* Colors — Gulf Oil Racing palette */
+  --color-vacuul-blue: #002776;
+  --color-vacuul-teal: #2A6EBB;
+  --color-vacuul-light: #B9D9EB;
+  --color-vacuul-accent: #FF6319;
+  --color-vacuul-accent-hover: #E85A10;
+  --color-vacuul-bg: #F2F2F2;
+  --color-vacuul-dark: #051E42;
   --color-vacuul-surface: #FFFFFF;
-  --color-vacuul-muted: #8BA5BD;
+  --color-vacuul-muted: #7E848B;
 
   /* Typography */
   --font-sans: var(--font-geist-sans);
@@ -23,8 +23,8 @@
   --font-size-h3: 1.5rem;
 
   /* Shadows */
-  --shadow-card: 0 4px 6px -1px rgb(11 37 69 / 0.1), 0 2px 4px -2px rgb(11 37 69 / 0.1);
-  --shadow-card-hover: 0 20px 25px -5px rgb(11 37 69 / 0.1), 0 8px 10px -6px rgb(11 37 69 / 0.1);
+  --shadow-card: 0 4px 6px -1px rgb(0 39 118 / 0.1), 0 2px 4px -2px rgb(0 39 118 / 0.1);
+  --shadow-card-hover: 0 20px 25px -5px rgb(0 39 118 / 0.1), 0 8px 10px -6px rgb(0 39 118 / 0.1);
 
   /* Border radius */
   --radius-card: 1rem;
@@ -43,8 +43,8 @@ body {
 
 /* Dark mode overrides */
 .dark body {
-  background: #0A1628;
-  color: #e2e8f0;
+  background: #051E42;
+  color: #B9D9EB;
 }
 
 /* Animations */
@@ -61,10 +61,10 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(0 229 204 / 0.4);
+    box-shadow: 0 0 0 0 rgba(255 99 25 / 0.4);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(0 229 204 / 0);
+    box-shadow: 0 0 0 12px rgba(255 99 25 / 0);
   }
 }
 
