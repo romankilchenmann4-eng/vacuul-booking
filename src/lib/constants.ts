@@ -1,6 +1,6 @@
 export const SITE_NAME = "Vacuul";
 export const SITE_URL = "https://vacuul.com";
-export const CALENDLY_URL = "https://calendly.com/romankilchenmann4/30min";
+export const CALENDLY_URL = "https://calendly.com/langankemartin/30min";
 export const HEALTH_EXPO_URL = "https://healthexpo.ch";
 export const HEALTH_EXPO_DATE = "2026-05-30T10:00:00+02:00";
 
