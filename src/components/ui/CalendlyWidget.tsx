@@ -6,8 +6,12 @@ import { CALENDLY_URL } from "@/lib/constants";
 export default function CalendlyWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
-  const open = useCallback(() => setIsOpen(true), []);
+  const open = useCallback(() => {
+    setIframeLoaded(false);
+    setIsOpen(true);
+  }, []);
   const close = useCallback(() => setIsOpen(false), []);
 
   // Ensure mounted state for hydration
@@ -109,17 +113,20 @@ export default function CalendlyWidget() {
               title="Calendly – Beratung buchen"
               className="absolute inset-0 w-full h-full border-0"
               allow="clipboard-write"
+              onLoad={() => setIframeLoaded(true)}
             />
           )}
-          {/* Loading skeleton */}
-          <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-[#122340]">
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-10 h-10 border-3 border-vacuul-accent border-t-transparent rounded-full animate-spin" />
-              <p className="text-sm text-vacuul-muted dark:text-white/50">
-                Kalender wird geladen…
-              </p>
+          {/* Loading skeleton – hidden once iframe finishes loading */}
+          {!iframeLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-[#122340]">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-10 h-10 border-3 border-vacuul-accent border-t-transparent rounded-full animate-spin" />
+                <p className="text-sm text-vacuul-muted dark:text-white/50">
+                  Kalender wird geladen…
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
