@@ -5,9 +5,15 @@ import { CALENDLY_URL } from "@/lib/constants";
 
 export default function CalendlyWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const open = useCallback(() => setIsOpen(true), []);
   const close = useCallback(() => setIsOpen(false), []);
+
+  // Ensure mounted state for hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Expose open/close globally so any button can trigger it
   useEffect(() => {
@@ -41,10 +47,16 @@ export default function CalendlyWidget() {
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!mounted) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-4 sm:p-6">
+    <div
+      className={`fixed inset-0 z-[100] transition-all duration-300 ${
+        isOpen
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+      }`}
+    >
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
@@ -52,7 +64,7 @@ export default function CalendlyWidget() {
       />
 
       {/* PiP container */}
-      <div className="relative z-10 w-full max-w-2xl h-[85vh] sm:h-[80vh] bg-white dark:bg-[#122340] rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up flex flex-col">
+      <div className="relative z-10 w-full max-w-2xl h-[85vh] sm:h-[80vh] mx-auto mt-auto sm:my-auto rounded-t-2xl sm:rounded-2xl bg-white dark:bg-[#122340] shadow-2xl overflow-hidden flex flex-col">
         {/* Header bar */}
         <div className="flex items-center justify-between px-5 py-3 border-b border-vacuul-blue/10 dark:border-white/10 bg-vacuul-bg dark:bg-[#0A1628]">
           <div className="flex items-center gap-3">
@@ -91,12 +103,14 @@ export default function CalendlyWidget() {
 
         {/* Calendly iframe */}
         <div className="flex-1 relative">
-          <iframe
-            src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=002776&primary_color=FF6319`}
-            title="Calendly – Beratung buchen"
-            className="absolute inset-0 w-full h-full border-0"
-            allow="clipboard-write"
-          />
+          {isOpen && (
+            <iframe
+              src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=002776&primary_color=FF6319`}
+              title="Calendly – Beratung buchen"
+              className="absolute inset-0 w-full h-full border-0"
+              allow="clipboard-write"
+            />
+          )}
           {/* Loading skeleton */}
           <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-[#122340]">
             <div className="flex flex-col items-center gap-3">
