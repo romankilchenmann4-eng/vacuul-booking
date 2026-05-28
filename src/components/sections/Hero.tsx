@@ -1,4 +1,4 @@
-import { CALENDLY_URL } from "@/lib/constants";
+import BookingButton from "@/components/ui/BookingButton";
 
 export default function Hero() {
   return (
@@ -20,14 +20,9 @@ export default function Hero() {
           600 spezialisierte Blutgefässe in Ihren Handflächen – genutzt
           mit Unterdruck und präziser Kühlung. Stanford-forschungsbasiert.
         </p>
-        <a
-          href={CALENDLY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-vacuul-accent text-vacuul-blue font-bold text-lg px-10 py-4 rounded-xl hover:bg-vacuul-accent-hover transition-colors shadow-lg animate-pulse-glow"
-        >
+        <BookingButton className="inline-block bg-vacuul-accent text-vacuul-blue font-bold text-lg px-10 py-4 rounded-xl hover:bg-vacuul-accent-hover transition-colors shadow-lg animate-pulse-glow">
           Beratung buchen
-        </a>
+        </BookingButton>
       </div>
 
       {/* Scroll indicator */}

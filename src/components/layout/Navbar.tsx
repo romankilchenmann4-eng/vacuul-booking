@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-import { NAV_LINKS, CALENDLY_URL } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,14 +54,12 @@ export default function Navbar() {
             </Link>
           ))}
           <ThemeToggle />
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => (window as unknown as Record<string, () => void>).__calendlyOpen?.()}
             className="bg-vacuul-accent text-vacuul-blue font-semibold text-sm px-5 py-2 rounded-lg hover:bg-vacuul-accent-hover transition-colors"
           >
             Beratung buchen
-          </a>
+          </button>
         </div>
 
         {/* Mobile menu button */}
@@ -99,14 +97,12 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => { setMenuOpen(false); (window as unknown as Record<string, () => void>).__calendlyOpen?.(); }}
               className="bg-vacuul-accent text-vacuul-blue font-bold text-lg px-8 py-4 rounded-lg hover:bg-vacuul-accent-hover transition-colors mt-4"
             >
               Beratung buchen
-            </a>
+            </button>
           </div>
         </div>
       )}

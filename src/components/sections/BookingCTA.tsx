@@ -1,5 +1,5 @@
-import { CALENDLY_URL } from "@/lib/constants";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import BookingButton from "@/components/ui/BookingButton";
 
 export default function BookingCTA() {
   return (
@@ -25,16 +25,11 @@ export default function BookingCTA() {
           </p>
         </AnimateOnScroll>
         <AnimateOnScroll delay={200}>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-vacuul-accent text-vacuul-blue font-bold text-lg px-10 py-4 rounded-xl hover:bg-vacuul-accent-hover transition-colors shadow-lg animate-pulse-glow"
-          >
+          <BookingButton className="inline-block bg-vacuul-accent text-vacuul-blue font-bold text-lg px-10 py-4 rounded-xl hover:bg-vacuul-accent-hover transition-colors shadow-lg animate-pulse-glow">
             Jetzt Termin buchen
-          </a>
+          </BookingButton>
           <p className="text-white/40 text-xs mt-6">
-            Sie werden zu unserem Online-Buchungssystem weitergeleitet.
+            Buchen Sie direkt hier – ohne die Seite zu verlassen.
           </p>
         </AnimateOnScroll>
       </div>

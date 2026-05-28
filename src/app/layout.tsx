@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import CalendlyWidget from "@/components/ui/CalendlyWidget";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -68,6 +69,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         {children}
+        <CalendlyWidget />
       </body>
     </html>
   );
