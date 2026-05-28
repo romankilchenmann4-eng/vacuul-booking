@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Impressum() {
   return (
-    <div className="min-h-screen bg-vacuul-bg dark:bg-[#0A1628]">
+    <div className="min-h-screen bg-vacuul-bg dark:bg-[#051E42]">
       <div className="max-w-3xl mx-auto px-6 py-20 pt-28">
         <Link
           href="/"
@@ -27,7 +27,8 @@ export default function Impressum() {
               Herausgeber
             </h2>
             <p>
-              Vacuul – Vacuum Palm Cooling<br />
+              4Grad & More, Martin Langanke<br />
+              Vacuul – Vacuum Palm Cooling
             </p>
           </section>
 
@@ -36,9 +37,9 @@ export default function Impressum() {
               Kontaktperson
             </h2>
             <p>
-              Roman Kilchenmann<br />
+              Martin Langanke<br />
               E-Mail: info@vacuul.com<br />
-              Telefon: +41 XX XXX XX XX
+              Telefon: +41 79 890 9999
             </p>
           </section>
 

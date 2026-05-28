@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Datenschutz() {
   return (
-    <div className="min-h-screen bg-vacuul-bg dark:bg-[#0A1628]">
+    <div className="min-h-screen bg-vacuul-bg dark:bg-[#051E42]">
       <div className="max-w-3xl mx-auto px-6 py-20 pt-28">
         <Link
           href="/"
@@ -27,9 +27,13 @@ export default function Datenschutz() {
               1. Verantwortliche Stelle
             </h2>
             <p>
+              4Grad & More, Martin Langanke<br />
               Vacuul – Vacuum Palm Cooling<br />
-              Kontaktperson: Roman Kilchenmann<br />
-              E-Mail: info@vacuul.com
+              Ärztezentrum am Weinberg<br />
+              Gaissbergstrasse 45<br />
+              8280 Kreuzlingen<br />
+              Kontaktperson: Martin Langanke<br />
+              E-Mail: info@viergrad.cool
             </p>
           </section>
 
